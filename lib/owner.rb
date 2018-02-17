@@ -67,15 +67,9 @@ class Owner
       animal.clear
   end
 
-  def pet_count
-    pet_count = []
-    self.pets.each_key{|pet_kind| pet_count << self.pets[:"#{pet_kind}"].count}
-    pet_count
-  end
-
   def list_pets
     pet_count = self.pet_count
-    return "I have #{pet_count[0]} fish, #{pet_count[1]} dog(s), and #{pet_count[2]} cat(s)."
+    return "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 end
